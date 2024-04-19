@@ -31,5 +31,8 @@ public class Main {
         tinto.setCaducidad(localDate.plusDays(90));
         System.out.println(tinto);
 
+        //Se imprimen los otros productos
+        System.out.println(zucaritas);
+        System.out.println(nose);
     }
 }
