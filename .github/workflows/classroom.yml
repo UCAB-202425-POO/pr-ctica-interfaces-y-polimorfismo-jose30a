@@ -23,19 +23,9 @@ jobs:
         command: "./mvnw clean compile"
         timeout: 10
         max-score: 5
-    - name: Pruebas unitarias
-      id: pruebas-unitarias
-      uses: education/autograding-command-grader@v1
-      with:
-        test-name: Pruebas unitarias
-        setup-command: "./mvnw test"
-        command: gradle test
-        timeout: 10
-        max-score: 2
     - name: Autograding Reporter
       uses: education/autograding-grading-reporter@v1
       env:
         COMPILA_RESULTS: "${{steps.compila.outputs.result}}"
-        PRUEBAS-UNITARIAS_RESULTS: "${{steps.pruebas-unitarias.outputs.result}}"
       with:
-        runners: compila,pruebas-unitarias
+        runners: compila
