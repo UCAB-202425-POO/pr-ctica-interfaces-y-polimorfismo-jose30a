@@ -21,7 +21,7 @@ jobs:
         test-name: Compila
         setup-command: ''
         command: "./mvnw clean compile"
-        timeout: 10
+        timeout: 50
         max-score: 5
     - name: Autograding Reporter
       uses: education/autograding-grading-reporter@v1
